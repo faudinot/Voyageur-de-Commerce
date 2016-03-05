@@ -10,7 +10,7 @@ int Parametre::nbMaxGenerations = 500;
 double Parametre::minFitness = 2579;
     
     // Taux des opérateurs
-double Parametre::tauxMutation = 0.10;
+double Parametre::tauxMutation = 0.05;
 double Parametre::tauxAjoutGene = 0.0;
 double Parametre::tauxSupprGene = 0.0;
 double Parametre::tauxCrossover = 0.10;

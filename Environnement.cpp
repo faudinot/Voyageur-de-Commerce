@@ -1,11 +1,34 @@
 #include <iostream>
 #include <cstdlib>
-#include <vector>
 
 #include "Environnement.h"
 
+// Constructeur & Destructeur
+
 Environnement::Environnement(){}
 
+Environnement::~Environnement(){};
+
+// Getters
+
+std::string Environnement::getVille(int villeIndex){
+    return villes.at(villeIndex);
+}
+
+int Environnement::getDistance(int ville1, int ville2){
+    return distances[ville1][ville2];
+}
+
+std::vector<int> Environnement::getVillesIndex(){
+    int nbVilles = villes.size();
+    std::vector<int> villesIndex;
+    for(int i=0; i < nbVilles; i++){
+        villesIndex.push_back(i);
+    }
+    return villesIndex;
+}
+
+// Methodes
 void Environnement::Init(){
     villes.push_back("Paris");
     villes.push_back("Lyon");
@@ -25,23 +48,4 @@ void Environnement::Init(){
     villes.push_back("Dijon");
     villes.push_back("Strasbourg");
     villes.push_back("Reims");
-}
-
-Environnement::~Environnement(){};
-
-std::string Environnement::getVille(int villeIndex){
-    return villes.at(villeIndex);
-}
-
-int Environnement::getDistance(int ville1, int ville2){
-    return distances[ville1][ville2];
-}
-
-std::vector<int> Environnement::getVillesIndex(){
-    int nbVilles = villes.size();
-    std::vector<int> villesIndex;
-    for(int i=0; i < nbVilles; i++){
-        villesIndex.push_back(i);
-    }
-    return villesIndex;
 }

@@ -23,7 +23,6 @@ public:
     ~Individus();
     double getFitness();
     void setFitness(double);
-
     void Muter();
     double Evaluer();
     void Afficher();

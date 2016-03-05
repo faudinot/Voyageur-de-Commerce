@@ -12,6 +12,7 @@
 #include "Parametres.h"
 #include "Environnement.h"
 #include "Evolution.h"
+#include "Glouton.h"
 
 using namespace std;
 
@@ -34,7 +35,8 @@ int main(int argc, char** argv) {
     Evolution system;
     
     system.Run();
-    
+
+   // Glouton();
     
     return 0;
 }
