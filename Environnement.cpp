@@ -37,6 +37,7 @@ void Environnement::Init(){
     villes.push_back("Bordeaux");
     villes.push_back("Toulouse");
     villes.push_back("Lille");
+    
     villes.push_back("Rouen");
     villes.push_back("Rennes");
     villes.push_back("Brest");
@@ -48,4 +49,5 @@ void Environnement::Init(){
     villes.push_back("Dijon");
     villes.push_back("Strasbourg");
     villes.push_back("Reims");
+     
 }

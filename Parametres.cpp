@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int Parametre::nbIndividus = 500;
+int Parametre::nbIndividus = 200;
 int Parametre::nbGenes = 10;
     
     // Critere d'arret
