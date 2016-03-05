@@ -8,7 +8,8 @@
 #ifndef ENVIRONNEMENT_H
 #define	ENVIRONNEMENT_H
 
-#define NBVILLE 18
+//#define NBVILLE 7
+ #define NBVILLE 18
 
 #include <vector>
 
@@ -23,7 +24,7 @@ public:
     
 private:
     std::vector<std::string> villes;
-    /*
+   /*
     int distances[NBVILLE][NBVILLE] = { {0, 462, 772, 379, 546, 678, 215},      // Paris
                                         {462, 0, 326, 598, 842, 506, 664},      // Lyon
                                         {772, 326, 0, 909, 555, 407, 1005},     // Marseille
@@ -32,7 +33,7 @@ private:
                                         {678, 506, 407, 540, 250, 0, 926},      // Toulouse
                                         {215, 664, 1005, 584, 792, 926, 0}      // Lille
                                       };     
-    */
+  */
     
     int distances[NBVILLE][NBVILLE] = { {0, 462, 772, 379, 546, 678, 215, 136, 353, 591, 240, 748, 839, 932, 424, 315, 491, 144},         // Paris
                                         {462, 0, 326, 598, 842, 506, 664, 596, 740, 970, 488, 302, 378, 471, 167, 195, 492, 489},         // Lyon
@@ -58,7 +59,3 @@ private:
 };
 
 #endif	/* ENVIRONNEMENT_H */
-
-/*
-  
- * */

@@ -5,10 +5,12 @@
 #include "Environnement.h"
 #include "Individus.h"
 
+#define DISTMAX 2000
+
 Glouton::Glouton(){
     Run();
-    std::cout << "Genome : "; Afficher();
     std::cout << "Fitness : " << fitness << " km" << std::endl;
+    std::cout << "Genome : "; Afficher();
 }
 
 Glouton::~Glouton(){}
@@ -27,52 +29,60 @@ void Glouton::Run() {
     std::vector<int> rangColonne;
     std::vector<int> rangLigne;
     int indexLigne = param.randomInt(NBVILLE);
+    int premierIndex = indexLigne;
     int rang;
+    int distance;
+    int cmpt = 0;
     double distTotale = 0.0;
     
-    int minDist = 2000;
+    int minDist = DISTMAX;
 
-    
     // Création des villes
     env.Init();
     
     // Recup liste des villes
     std::vector<int> indexDispo = env.getVillesIndex();
         
+    // Initialisation des vecteurs
     for(int i=0; i<NBVILLE; i++){
         rangColonne.push_back(i);
         rangLigne.push_back(i);
     }
     
-
-    int arret = 0;
-    while(arret < NBVILLE){
+    while(genome.size() < NBVILLE){
         std::cout << "Indice ville : " << indexLigne << std::endl;
-        
+
         for(int indexColonne=0; indexColonne < rangColonne.size(); indexColonne++){
             if(rangColonne.at(indexColonne) != -1){
-                int dist = env.getDistance(rangLigne.at(indexLigne), rangColonne.at(indexColonne));
-                std::cout << "Indice : " << indexColonne << ", min : " << minDist << ", dist : " << dist << std::endl;
+                distance = env.getDistance(rangLigne.at(indexLigne), rangColonne.at(indexColonne));
+                std::cout << "Indice : " << indexColonne << ", min : " << minDist << ", dist : " << distance << std::endl;
         
-                if(dist < minDist && dist != 0){
-                    minDist = dist;
-                    distTotale += dist;
+                if(distance < minDist && distance != 0){
+                    minDist = distance;
                     rang = indexColonne;
-                }
+                }              
             }
         }
-        std::cout << "Rang suivant : " << rang << std::endl;
+        if(minDist != DISTMAX){
+            distTotale += minDist;
+        }
+
+        std::cout << "Distance : " << distTotale << std::endl;
         rangColonne.at(indexLigne) = -1;
         Gene gene = indexDispo.at(indexLigne);
         genome.push_back(gene);
         std::cout << "Genome : "; Afficher(); 
         indexLigne = rang;
-        minDist = 2000;
-        arret++;
+
+        minDist = DISTMAX;
         std::cout << "\n";
     }
-    
-    fitness += distTotale;
+    // Retour à la ville de départ
+    indexLigne = premierIndex;
+    minDist = env.getDistance(indexLigne, rang);
+    distTotale += minDist;
+
+    fitness = distTotale;
 }
 
 void Glouton::Afficher(){

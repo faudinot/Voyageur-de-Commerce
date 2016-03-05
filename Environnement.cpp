@@ -49,5 +49,5 @@ void Environnement::Init(){
     villes.push_back("Dijon");
     villes.push_back("Strasbourg");
     villes.push_back("Reims");
-     
+    
 }
