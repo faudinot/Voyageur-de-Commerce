@@ -5,11 +5,11 @@ Ce projet vise à résoudre le problème du Voyageur de Commerce.
 
 ## Table des matières
 
-- Introduction
-- Problème du Voyageur de Commerce
-- Solutions
-	- Algorithme génétique
-	- Algorithme glouton
+- [Introduction](#introduction)
+- [Problème du Voyageur de Commerce](#probleme-du-voyageur-de-commerce)
+- [Solutions](#solutions)
+	- [Algorithme génétique](#algorithme-génétique)
+	- [Algorithme glouton][#algorithme-glouton)
 
 *********
 
