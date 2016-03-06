@@ -1,13 +1,15 @@
-# Voyageur-de-Commerce
+Voyageur-de-Commerce
+==========
 
 Ce projet vise à résoudre le problème du Voyageur de Commerce.
 
+## Table des matières
 
-# Introduction
-# Problème du Voyageur de Commerce
-# Solutions
-## Algorithme génétique
-## Algorithme glouton
+- Introduction
+- Problème du Voyageur de Commerce
+- Solutions
+	- Algorithme génétique
+	- Algorithme glouton
 
 *********
 
